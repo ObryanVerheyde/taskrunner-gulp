@@ -1,11 +1,13 @@
 $mainColor: #FFFFFF;
 
-h1 {
-  color: #FAE20C;
-}
-
 body {
   padding: 0;
   margin: 0;
   background-color: $mainColor;
 }
+
+h1 {
+  color: #FAE20C;
+}
+
+@import "button.scss"
