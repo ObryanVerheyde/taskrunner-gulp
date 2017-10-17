@@ -19,3 +19,17 @@ gulp.task("styles", function() {
 gulp.task("sass-watcher", function() {
   gulp.watch("sass/**/*.scss", ["styles"]);
 });
+
+gulp.task("js", function() {
+  gulp.src("src/**/*.js")
+    .pipe(concat("main.js"))
+    .pipe(uglify())
+    .pipe(gulp.dest("dist/js"));
+});
+
+gulp.task("js-watcher", function() {
+  gulp.watch("src/**/*.js", ["js"]);
+});
+
+gulp.task("dev", ["sass-watcher", "js-watcher"]);
+gulp.task("default", ["styles", "js"]);
